@@ -8,7 +8,7 @@ const SpecialMenu = () => (
   <div className='app__specialMenu flex__center section__padding'>
     <div className='app__specialMenu-title'>
       <SubHeading title= "Menu that fits Your Platte" />
-      <h1 className='headtext__cororant'> Today's Special</h1>
+      <h1 className='headtext__cormorant'> Today's Special</h1>
     </div>
 
     <div className='app__specialMenu-menu'>
@@ -17,7 +17,7 @@ const SpecialMenu = () => (
         <p className='app__specialMnu_menu_heading'>Wine & Beer</p>
         <div className='app__specialMenu_menu_items'>
           {data.wines.map((wine, index) => (
-            <p>{wine.title}</p>
+            <MenuItem  key={wine.title +index} title={wine.title}  price ={wine.price}tags={wine.tags}/>
           ))}
         </div>
       </div>
@@ -31,7 +31,7 @@ const SpecialMenu = () => (
         <p className='app__specialMnu_menu_heading'>Wine & Beer</p>
         <div className='app__specialMenu_menu_items'>
           {data.cocktails.map((cocktails, index) => (
-            <p>{cocktails.title}</p>
+            <MenuItem  key={cocktails.title +index} title={cocktails.title}  price ={cocktails.price} tags={cocktails.tags}/>
           ))}
         </div>
       </div>
@@ -40,7 +40,7 @@ const SpecialMenu = () => (
     <div style={{marginTop:'15px'}}>
       <button type='button' className='custom__button'> View More</button>
     </div>
-    
+
   </div>
 );
 
